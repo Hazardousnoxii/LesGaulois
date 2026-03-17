@@ -8,8 +8,9 @@ public class Romain {
 		this.nom = nom;
 		this.force = force;
 	}
+	
 	public String getNom() {
-		
+		return nom;
 	}
 	
 	public void parler(String texte) {
