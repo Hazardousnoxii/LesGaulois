@@ -4,6 +4,10 @@ import personnages.Gaulois;
 
 import personnages.Romain;
 
+import personnages.Druide;
+
+
+
 public class test_gaulois {
 		
 	public static void main(String[] args) {
@@ -19,6 +23,11 @@ public class test_gaulois {
         asterix.parler("Oui très bonne idée");
         
         Romain minus = new Romain("Minus",6) ;
+        
+        Romain brutus = new Romain("Brutus",14) ;
+        
+        Druide panoramix = new Druide("Panoramix",2) ;
+        
 
         System.out.println("Dans la forêt " + asterix.getNom() + " et " + obelix.getNom() + " tombent nez à nez sur le romain " + minus.getNom() + ".");
 
@@ -26,5 +35,13 @@ public class test_gaulois {
             asterix.frapper(minus);
         }
         
+        panoramix.fabriquerPotion(4,3);
+        
+        panoramix.booster(obelix);
+        panoramix.booster(asterix);
+        
+        for (int i = 0 ; i<3 ; i++) {
+        	asterix.frapper(brutus);
+        }
     }		
 }

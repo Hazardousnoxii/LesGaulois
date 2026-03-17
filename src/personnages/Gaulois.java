@@ -4,6 +4,7 @@ public class Gaulois {
 	
 	private String nom ;
 	private int force ;
+	private int effetPotion = 1 ;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -34,8 +35,17 @@ public class Gaulois {
 	
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		romain.recevoirCoup(force / 3);
+		romain.recevoirCoup((force*this.effetPotion) / 3);
+		this.effetPotion--;
+		
+		if (this.effetPotion < 1) {
+            this.effetPotion = 1;
+        }
 	}
+	
+	public void boirePotion(int forcePotion) {
+        this.effetPotion = forcePotion;
+    }
 	
 	
 }
