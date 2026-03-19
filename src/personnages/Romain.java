@@ -25,11 +25,12 @@ public class Romain {
 		this.force = this.force - forceCoup ;
 		if (this.force < 1) 
 		{
-			System.out.println(prendreParole() + "J'abandonne !") ;
+			force = 0;
+			parler("J'abandonne !");
 		}
 		else
 		{
-			System.out.println(prendreParole() + "Aie !") ;
+			parler("aie !");
 		}
 	}
 }
