@@ -1,6 +1,4 @@
-package village_gaulois;
-
-import personnages.Gaulois;
+package personnages;
 
 public class Village {
 	
@@ -11,8 +9,9 @@ public class Village {
 	
 	public Village(String nom, int nbVillageoisMax, Gaulois chef) {
 		this.nom = nom;
-		this.villageois =new Gaulois[nbVillageoisMax];	
+		villageois =new Gaulois[nbVillageoisMax];	
 		this.chef = chef;
+		chef.setVillage(this);
 	}
 	
 	public String getNom() {
@@ -24,22 +23,22 @@ public class Village {
 	}
 	
 	public void ajouterVillageois(Gaulois gaulois) {
-		if (nbVillageois < villageois.length) {
-            villageois[nbVillageois] = gaulois;
-            gaulois.setVillage(this);
-            nbVillageois++;
-        } else {
-            System.out.println("Le village est plein !");
-        }
+		villageois[nbVillageois] = gaulois;
+		gaulois.setVillage(this);
+		nbVillageois++;
 	}
 	
 	public Gaulois trouverVillageois(int numVillageois) {
-		if (numVillageois >= 1 && numVillageois <= nbVillageois) {
-            return villageois[numVillageois - 1];
-        } else {
-            System.out.println("Il n’y a pas autant d’habitants dans notre village !");
-            return null;
-        }
+		Gaulois gauloischerche = null;
+		if (numVillageois > 0 && numVillageois < nbVillageois + 1)
+		{
+			gauloischerche = villageois[numVillageois - 1];
+		}
+		else
+		{
+			System.out.println("Il n'y a pas autant d'habitants dans la village");
+		}
+		return gauloischerche;
 	}
 	
 	public void afficherVillage() {
@@ -68,6 +67,5 @@ public class Village {
 		asterix.sePresenter();
 		obelix.sePresenter();
 		doublepolemix.sePresenter();
-		
 	}
 }

@@ -1,5 +1,4 @@
 package personnages;
-import village_gaulois.Village;
 
 public class Gaulois {
 	
@@ -30,7 +29,29 @@ public class Gaulois {
 		return "Le Gaulois " + nom + " : " ;
  	}
 	
-	public void sePresenter() {
+	public void sePresenter()
+	{
+		StringBuilder chaine = new StringBuilder("Bonjour, je m'appelle " + "nom " + ".");
+		if (village == null)
+		{
+			chaine.append("Je voyage de village en village");
+		}
+		else
+		{
+			if (village.getChef().equals(this))
+			{
+				chaine.append("Je suis le chef");
+			}
+			else
+			{
+				chaine.append("J'habite");
+			}
+			chaine.append("le village " + village.getNom() + ".");
+		}
+		parler(chaine.toString());
+	}
+	
+	/* public void sePresenter() {
 		if (village == null)
 		{
 			parler("Bonjour, je m'appelle " + nom + ". Je voyage de villages en villages.");
@@ -47,6 +68,7 @@ public class Gaulois {
 		}
 		
 	}
+	*/
 	
 	@Override
 	public String toString() {
@@ -72,7 +94,5 @@ public class Gaulois {
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		System.out.println(asterix);
 		asterix.sePresenter();
-	}
-	
-	
+	}	
 }
