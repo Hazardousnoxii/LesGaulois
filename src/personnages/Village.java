@@ -48,7 +48,7 @@ public class Village {
 		}
 	}
 
-	public static void main(String arg[]) {
+	public static void main(String[] arg) {
 		Gaulois abraracourcix = new Gaulois("Abraracourcix",6);
 		Village village = new Village("Village des irreductibles",30,abraracourcix);
 		

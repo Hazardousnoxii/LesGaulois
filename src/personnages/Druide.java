@@ -5,7 +5,7 @@ import objets.Chaudron;
 public class Druide {
 	
 	private String nom ;
-	private int force ;
+	private int force;
 	private Chaudron chaudron ;
 	
 	public Druide(String nom, int force) {
